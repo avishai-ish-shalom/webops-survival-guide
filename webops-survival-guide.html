@@ -47,29 +47,41 @@
 					<section>
 						<h1>The fan</h1>
             <h3 class="fragment">This is the part we control</h3>
+            <p class="fragment">Complex, many components</p>
 					</section>
 					<section>
 						<h1>The sh!t</h1>
             <h3 class="fragment">This is the part we don't control</h3>
+            <p class="fragment">Rare, unique incidents</p>
+            <aside class="notes">
+            	<ul>
+            		<li>Rare is relative, even hourly is rare in a system with 1m rpm</li>
+            	</ul>
+            </aside>
 					</section>
 					<section>
 						<h1>You</h1>
+            			<img src="assets/santang-rambo-tux.png"/>
 					</section>
         </section>
 				<section>
 					<section>
-						<h1>Preparing for the unpredictable</h1>
+						<h1>Reliability is a long term effort</h>
 						<aside class="notes">
-							<p>Reliability is a cost that needs to be actively managed</p>
 							<ul>
-								<li>Long term</li>
-                <li>Real world experience is critical</li>
-                <li>"hans't crashed yet" fallacy</li>
+								<li>Reliability is a (hidden) cost that needs to be actively managed</li>
+                				<li>Real world experience is critical</li>
+                				<li>"hans't crashed yet" fallacy</li>
 							</ul>
 						</aside>
 					</section>
 					<section>
 						<h2>Be honest with yourself</h2>
+						<ul>
+							<li>Relax business requirements and goals</li>
+							<li>Simplify the system</li>
+							<li>Prove your assumptions and definitions</li>
+						</ul>
 						<aside class="notes">
 							<ul>
 								<li>Reliablity is about relying and believing</li>
@@ -80,15 +92,16 @@
 					</section>
 					<section>
 						<h2>Can the system survive you?</h2>
-            <h3>Human activity is a <i>significant</i> factor</h3>
-            <ul class="fragment">
-              <li>Standartize</li>
-              <li>Consolidate</li>
-              <li>Use the same tools in dev and production</li>
-            </ul>
+            			<h3>Human activity is a <i>significant</i> factor</h3>
+			            <ul class="fragment">
+			              <li>Standartize</li>
+			              <li>Consolidate</li>
+			              <li>Use the same tools in dev and production</li>
+			              <li>Manage team fatigue and wear</li>
+			            </ul>
 						<aside class="notes">
 							<ul>
-                <li>Activity, not always error</li>
+               					<li>Activity, not always error</li>
 								<li>You are a part of the system workflow</li>
 								<li>Is there a fallback for you?</li>
 								<li>e.g. Can you work without your laptop?</li>
@@ -96,16 +109,12 @@
 						</aside>
 					</section>
 					<section>
-						<h2>Go home</h2>
-						<p>You may find yourself working again today</p>	
-					</section>
-					<section>
 						<h2>Practice and plan</h2>
-            <ul>
-              <li>Production visibility</li>
-              <li>Decision lines</li>
-              <li>Rarely used skills</li>
-            </ul>
+			            <ul>
+			              <li>Production visibility</li>
+			              <li>Decision lines</li>
+			              <li>Improve rarely used skills</li>
+			            </ul>
 						<aside class="notes">
 							<ul>
 								<li>Your telemetry might not provide the information you need</li>
@@ -115,13 +124,21 @@
 						</aside>
 					</section>
 					<section>
+						<h2>Simulate disasters</h2>
+						<ul>
+							<li>Systems ehibit different behaviour in stress</li>
+							<li>Some bugs/behaviours manifest in abnormal conditions</li>
+						</ul>
+					</section>
+					<section>
 						<h2>It ain't paranoya when they are really out to get you</h2>
-            <h3 class="fragment">You can't even trust yourself</h3>
-            <ul class="fragment">
-              <li>Tests</li>
-              <li>Runtime validation</li>
-              <li>Change management</li>
-            </ul>
+						<h3 class="fragment">Everything fails</h3>
+            			<h3 class="fragment">You can't even trust yourself</h3>
+			            <ul class="fragment">
+			              <li>Tests</li>
+			              <li>Runtime validation</li>
+			              <li>Change management</li>
+			            </ul>
 						<aside class="notes">
 							<ul>
 								<li>Every minute <i>million</i> things try to break your system</li>
@@ -154,11 +171,8 @@
             <img src="http://images3.wikia.nocookie.net/creepypasta/images/8/80/Panic-attack-symptoms.png"/>
 					</section>
 					<section>
-						<h2>This is how Ops feel</h2>
+						<h2>This is how Ops should feel</h2>
             <img src="http://1.bp.blogspot.com/-iHFPBkqHabw/Taws0pU8TwI/AAAAAAAAEB8/I4ijuHMR33E/s400/excellent-mr-burns.gif"/>
-					</section>
-					<section>
-            <img src="assets/santang-rambo-tux.png"/>
 					</section>
 					<section>
 						<h2>An incident is an opportunity</h2>
@@ -172,7 +186,12 @@
 						<h1>Don't panic</h1>
 					</section>
 					<section>
-						<h2>Never act without data</h2>
+						<h1>Collect data</h1>
+						<p>Data needed for debugging, simulating and post mortem</p>
+					</section>
+					<section>
+						<h2>Assumptions are the mother of all f*ckups</h2>
+						<h2>Never act without evidence</h2>
 						<aside class="notes">
 							<ul>
 								<li>More often then not it's better not to do anything then to shoot in the dark</li>
@@ -182,22 +201,19 @@
 					<section>
 						<h2>Do one thing at a time</h2>
 					</section>
-					<section><h2>Assumptions are the mother of all f*ckups</h2></section>
-          <section>
-            <h2>Communicate!</h2>
-            <ul>
-              <li>Chat services</li>
-              <li>Log the chat</li>
-              <li>No invitation needed</li>
-            </ul>
-          </section>
+			          <section>
+			            <h2>Communicate!</h2>
+			            <ul>
+			              <li>Chat services</li>
+			              <li>Log the chat</li>
+			              <li>No invitation needed</li>
+			            </ul>
+			          </section>
 					<section><h2>Don't loose control</h2>
-						<aside class="notes">
-							<ul>
-								<li>Designate an incident manager</li>
-                <li>Watch the clock and your decision lines</li>
-							</ul>
-						</aside>
+						<ul>
+							<li>Designate an incident manager</li>
+            				<li>Watch the clock and your decision lines</li>
+						</ul>
 					</section>
 					<section>
 						<h2>Prepare the handoff</h2>
@@ -206,7 +222,7 @@
 				<section>
 					<section>
 						<h1>Boss battle!</h1>
-            <img src="http://media.tumblr.com/21ba9d6af30980fa19b746926d831c36/tumblr_inline_mpum4aF7971qz4rgp.gif"/>
+            			<img src="http://media.tumblr.com/21ba9d6af30980fa19b746926d831c36/tumblr_inline_mpum4aF7971qz4rgp.gif"/>
 					</section>
 					<section>
 						<h2>Take the pressure off</h2>
@@ -215,12 +231,6 @@
 							<li>Mitigate business pressure</li>
 							<li>Stay out of Ops' hair</li>
 						</ul>
-					</section>
-					<section>
-						<h2>Prepare the next wave</h2>
-					</section>
-					<section>
-						<h2>Coordinate, manage</h2>
 					</section>
 				</section>
 				<section>
