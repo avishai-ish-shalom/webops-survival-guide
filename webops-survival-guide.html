@@ -42,13 +42,31 @@
 					<p>
 						<small>Avishai Ish-Shalom (<a href="http://twitter.com/nukemberg">@nukemberg</a>)</small>
 					</p>
+					<aside class="notes">
+						<ul>
+							<li>we are building services, not products</li>
+							<li>Operations is part of the value for customers</li>
+						</ul>
+					</aside>
 				</section>
 				<section>
 					<section>
-						<h1>Uptime: 298392330 days<br />why would it crash?</h1>
+						<h3>"but it's been up for 2983 days"</h3>
+						<h3>"It never failed yet"</h3>
+						<h3>"Vendor MTBF is gazillion years"</h3>
+						<aside class="notes">
+							<ul>
+								<li>I worked with a lot of companies and these are a repeated theme; But in reality</li>
+							</ul>
+						</aside>
 					</section>
 					<section>
-						<h1>Everything breaks</h1>
+						<h1>All systems break eventually</h1>
+						<aside class="notes">
+							<ul>
+								<li>And when it does break, people tend to feel like this...</li>
+							</ul>
+						</aside>
 					</section>
 					<section>
 						<img src="http://images3.wikia.nocookie.net/creepypasta/images/8/80/Panic-attack-symptoms.png"/>
@@ -57,22 +75,34 @@
 			            <img src="http://1.bp.blogspot.com/-iHFPBkqHabw/Taws0pU8TwI/AAAAAAAAEB8/I4ijuHMR33E/s400/excellent-mr-burns.gif"/>
 					</section>
 					<section>
-						<h1>It's an opportunity</h1>
+						<h1>Downtime is bad, but...</h1>
+					</section>
+					<section>
+						<h1>It's also an opportunity</h1>
 						<aside class="notes">
 						<ul>
-							<li>Your systems is being tested in ways you never imagined</li>
+							<li>Your systems are being tested in ways you never imagined</li>
 							<li>That data is pricesless</li>
-							<li>New operational paths open</li>
+							<li>New operational paths open; e.g. you can set database to read only mode</li>
+							<li>Seize the opportunity. The managers sometimes say:</li>
 						</ul>
 						</aside>
 					</section>
 					<section>
-						<h1>How do we get there?</h1>
+						<h1>Cut the B.S., We want uptime!</h1>
 					</section>
 					<section>
-						<h1>Easy, just call Rambo Ops</h1>
+						<h1>Just call Rambo Ops when something breaks</h1>
             			<img src="assets/santang-rambo-tux.png"/>
             			<h1 class="fragment">No</h1>
+            			<aside class="notes">
+            				<ul>
+            					<li>Rambo needs tools in place</li>
+            					<li>Complex systems need fault tolerant design</li>
+            					<li>We need fallbacks to be ready</li>
+            					<li>Specific experience required</li>
+            				</ul>
+            			</aside>
 					</section>
 					<section>
 						<h1>Reliability is a long term effort</h>
@@ -90,21 +120,31 @@
 							<li>Handle disasters</li>
 							<li>Learn and improve</li>
 						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Prepare when things are ok</li>
+								<li>Handle disasters as they occure</li>
+								<li>Learn from those disasters and improve</li>
+								<li>So, what can we do to prepare?</li>
+							</ul>
+						</aside>
 					</section>
 				</section>
 				<section>
 					<section>
-						<h2>Be honest with yourself</h2>
+						<h2>Be realistic</h2>
 						<ul>
 							<li>Relax business requirements and goals</li>
-							<li>Simplify the system</li>
 							<li>Prove your assumptions and definitions</li>
+							<li>Simplify the system</li>
 						</ul>
 						<aside class="notes">
 							<ul>
-								<li>Reliablity is about relying and believing</li>
+								<li>Be honest with yourself</li>
+								<li>Many times i got to a company and heard exaggerated business requirements like 99.99% uptime, no data loss tolerated, etc. This causes over-engineering and overly complex systems which are less reliable in practive</li>
+								<li>Relax your business requirements</li>
+								<li>Don't guess, try to act on proven assumptions</li>
 								<li>Actual data is hard to come by when dealing with one-of-a-kind system and rare events</li>
-								<li>Biases - what was is what will be</li>
 							</ul>
 						</aside>
 					</section>
@@ -112,24 +152,34 @@
 						<h2>Practice and plan</h2>
 			            <ul>
 			              <li>Production visibility</li>
-			              <li>Decision lines</li>
 			              <li>Improve rarely used skills</li>
+			              <li>Decision lines</li>
 			            </ul>
 						<aside class="notes">
 							<ul>
+								<li>It's not enough to have the tools, you need to use them effectively</li>
 								<li>Your telemetry might not provide the information you need</li>
 								<li>Are you comfortable and productive with the tools?</li>
-								<li>Build runbooks - miss less and be time effective</li>
+								<li>Rarely used skills (e.g. recovering from backups) need to be applieds in time pressing situations</li>
+								<li>Build DR plans and investigation runbooks when you have time to properly plan</li>
 							</ul>
 						</aside>
 					</section>
 					<section>
 						<h2>Simulate disasters</h2>
+						<h3>Systems exhibit different behaviour under stress</h3>
 						<ul>
-							<li>Systems ehibit different behaviour in stress</li>
+							<li>Different operation procedures</li>
 							<li>Some bugs/behaviours manifest in abnormal conditions</li>
+							<li>Faulty fallback syndrom</li>
 						</ul>
-						<h3 class="fragment">Faulty fallback syndrom</h3>
+						<aside class="notes">
+							<ul>
+								<li>The systems behaves differently when things are broken</li>
+								<li>The only way to prepare is to simulate disasters</li>
+								<li>I've seen many fallbacks that failed during incidents because to the faulty fallback syndrom. The problem is that fallbacks are often tested on normal conditions and rarely used in prodcution; But fallbacks are needed the most when the system is already broken and therefor fail</li>
+							</ul>
+						</aside>
 					</section>
 		          <section>
 		            <h2>Improve your processes</h2>
@@ -145,29 +195,22 @@
 		              </ul>
 		            </aside>
 		          </section>				
+
 					<section>
-						<h2>Can the system survive you?</h2>
-						<img src="assets/drunk_fark_sysadmin.jpg"/>
-						<aside class="notes">
-							<ul>
-								<li>things always happen at 3am</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-            			<h2>Human activity is a <i>significant</i> factor</h2>
+            			<h2>Don't forget the human factor</h2>
 			            <ul>
 			              <li>Standartize</li>
 			              <li>Consolidate</li>
-			              <li>Use the same tools in dev and production</li>
+			              <li>Redundancy includes people</li>
 			              <li>Manage team fatigue and wear</li>
 			            </ul>
 						<aside class="notes">
 							<ul>
-               					<li>Activity, not always error</li>
+								<li>People tend to consider the human factor in the system as reliable. In reliality People get tired and have limited capacity; mental overhead is a big issue; skill in teams is not uniform</li>
+								<li>Make sure people on shifts go home early</li>
+								<li>Use the same tools in dev and production, it reduces mental overhead and improves skills</li>
+								<li>Is there a fallback for you? is someone backing you up? Can you work without your laptop?</li>
 								<li>You are a part of the system workflow</li>
-								<li>Is there a fallback for you?</li>
-								<li>e.g. Can you work without your laptop?</li>
 							</ul>
 						</aside>
 					</section>
@@ -195,60 +238,70 @@
 					</section>
 					<section>
 						<h1>3AM, Nagios critical</h1>
+						<img src="assets/drunk_fark_sysadmin.jpg"/>
+						<aside class="notes">
+							<ul>
+								<li>things always happen at 3am</li>
+							</ul>
+						</aside>
 					</section>
 					<section>
 						<h1>Don't panic</h1>
+					</section>
+					<section>
+						<h1>Assign an incident mananger</h1>
+						<ul>
+            				<li>Watch the clock and decision lines</li>
+            				<li>Communicate and keep information flowing</li>
+            				<li>Maintaint incident log</li>
+							<li>Prepare the handoff</li>
+						</ul>
+						<div class="fragment">
+						<h3>Take the pressure off</h3>
+            			<img src="http://media.tumblr.com/21ba9d6af30980fa19b746926d831c36/tumblr_inline_mpum4aF7971qz4rgp.gif"/>
+            			</div>
+						<aside class="notes">
+							<ul>
+								<li>Natural fit for a boss</li>
+								<li>Give Ops the feeling they are not the last line</li>
+								<li>Mitigate business pressure</li>
+								<li>Stay out of Ops' hair</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h1>Never act without evidence</h1>
+						<h3>Assumptions are the mother of all f*ckups</h3>
+						<aside class="notes">
+							<ul>
+								<li>The brain uses simple heuristics that are often misleading</li>
+								<li>Psychologically feel pressure to do something, it's hard sit idly by</li>
+								<li>More often then not it's better not to do anything then to shoot in the dark</li>
+								<li>What's the first thing people do when something's misbehaving? they restart it</li>
+								<li>Always analyze data before doing anything</li>
+							</ul>
+						</aside>
 					</section>
 					<section>
 						<h1>Collect data</h1>
 						<p>Data needed for debugging, simulating and post mortem</p>
 					</section>
 					<section>
-						<h2>Assumptions are the mother of all f*ckups</h2>
-						<h2>Never act without evidence</h2>
-						<aside class="notes">
-							<ul>
-								<li>More often then not it's better not to do anything then to shoot in the dark</li>
-								<li>Always analyze data before doing anything</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h2>Do one thing at a time</h2>
+						<h1>Do one thing at a time</h1>
 					</section>
 			          <section>
-			            <h2>Communicate!</h2>
+			            <h1>Communicate!</h1>
 			            <ul>
 			              <li>Chat services</li>
 			              <li>Log the chat</li>
 			              <li>No invitation needed</li>
 			            </ul>
+			            <aside class="notes">
+			            	<ul>
+			            		<li>Ok, the crisis is over; The system is back online. Now is the time to asses</li>
+			            	</ul>
+			            </aside>
 			          </section>
-					<section>
-						<h2>Incident mananger</h2>
-						<ul>
-            				<li>Watch the clock and decision lines</li>
-            				<li>Communicate and keep information flowing</li>
-            				<li>Maintaint incident log</li>
-						</ul>
-						<aside class="notes">
-							<ul>
-								<li>Natural fit for a boss</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h2>Prepare the handoff</h2>
-					</section>
-					<section>
-						<h2>Take the pressure off</h2>
-            			<img src="http://media.tumblr.com/21ba9d6af30980fa19b746926d831c36/tumblr_inline_mpum4aF7971qz4rgp.gif"/>
-						<p><ul>
-							<li>Give Ops the feeling they are not the last line</li>
-							<li>Mitigate business pressure</li>
-							<li>Stay out of Ops' hair</li>
-						</ul></p>
-					</section>
 				</section>
 				<section>
 					<section>
@@ -256,9 +309,14 @@
 					</section>
 					<section>
 						<h2>Post Mortem</h2>
+						<aside class="notes">
+							<ul>
+								<li>People expect post mortem to produce a root cause, but...</li>
+							</ul>
+						</aside>
 					</section>
 					<section>
-						<h2>No root cause</h2>
+						<h2><del>root cause</del> Contributing factors</h2>
 						<blockquote class="twitter-tweet"><p>Today&#39;s small win: getting the term &quot;root cause&quot; written out of my employer&#39;s company values, replaced with &quot;contributing factors&quot;</p>&mdash; Lindsay Holmwood (@auxesis) <a href="https://twitter.com/auxesis/statuses/365063097767034880">August 7, 2013</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 					</section>
@@ -270,6 +328,7 @@
 								<li>Many parts involved</li>
 								<li>Shifting blame doesn't help</li>
 								<li>Blame prevents activity</li>
+								<li>Taking the blame opens the door for productive discussion</li>
 							</ul>
 						</aside>
 					</section>
@@ -284,6 +343,16 @@
 					</section>
 				</section>
 				<section>
+					<section>
+						<h2>Reliablity is about relying and trusting</h2>
+						<aside class="notes">
+							<ul>
+								<li>To establish trust we need experience</li>
+								<li>Options will not be used if people don't trust them</li>
+								<li>If you are not confident enough to break your system, you don't have reliability</li>
+							</ul>
+						</aside>
+					</section>
 					<section>
 						<h2>Even if Rambo is working for you</h2>
 						<h2>Reliability is a long term effort</h2>
