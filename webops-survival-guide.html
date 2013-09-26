@@ -110,7 +110,6 @@
 							<ul>
 								<li>Reliability is a (hidden) cost that needs to be actively managed</li>
                 <li>Real world experience is critical</li>
-                <li>"hans't crashed yet" fallacy</li>
 							</ul>
 						</aside>
 					</section>
@@ -134,7 +133,7 @@
 								<li>Prepare when things are ok</li>
 								<li>Handle disasters as they occure</li>
 								<li>Learn from those disasters and improve</li>
-								<li>So, what can we do to prepare?</li>
+								<li>Let's look at what can we do to prepare?</li>
 							</ul>
 						</aside>
 					</section>
@@ -170,7 +169,7 @@
 								<li>Your telemetry might not provide the information you need</li>
 								<li>Are you comfortable and productive with the tools?</li>
 								<li>Rarely used skills (e.g. recovering from backups) need to be applieds in time pressing situations</li>
-								<li>Build DR plans and investigation runbooks when you have time to properly plan</li>
+								<li>Test possible plans, measure the time it takes to execute them and their effects. Use this data to build DR plans and investigation runbooks when you have time to properly plan</li>
 							</ul>
 						</aside>
 					</section>
@@ -186,7 +185,7 @@
 							<ul>
 								<li>The systems behaves differently when things are broken</li>
 								<li>The only way to prepare is to simulate disasters</li>
-								<li>I've seen many fallbacks that failed during incidents because to the faulty fallback syndrom. The problem is that fallbacks are often tested on normal conditions and rarely used in prodcution; But fallbacks are needed the most when the system is already broken and therefor fail</li>
+								<li>I've seen many fallbacks that failed during incidents because to the faulty fallback syndrom. The problem is that fallbacks are often tested on normal conditions and rarely used in prodcution; But fallbacks are needed the most when the system is under load and broken and therefor fail. An example of this is master slave RDBMS failover without warmup</li>
 							</ul>
 						</aside>
 					</section>
@@ -200,6 +199,7 @@
 		            </ul>
 		            <aside class="notes">
 		              <ul>
+                    <li>You have many processes, some automated some manual. Some for normal operation and some for emergencies</li>
 		                <li>And it's better if it's cheap too</li>
 		              </ul>
 		            </aside>
@@ -215,11 +215,11 @@
 			            </ul>
 						<aside class="notes">
 							<ul>
+								<li>You are a part of the system workflow</li>
 								<li>People tend to consider the human factor in the system as reliable. In reliality People get tired and have limited capacity; mental overhead is a big issue; skill in teams is not uniform</li>
-								<li>Make sure people on shifts go home early</li>
 								<li>Use the same tools in dev and production, it reduces mental overhead and improves skills</li>
 								<li>Is there a fallback for you? is someone backing you up? Can you work without your laptop?</li>
-								<li>You are a part of the system workflow</li>
+								<li>Make sure people on shifts go home early</li>
 							</ul>
 						</aside>
 					</section>
@@ -234,8 +234,8 @@
 			            </ul>
 						<aside class="notes">
 							<ul>
-								<li>Every minute <i>million</i> things try to break your system</li>
-                				<li>Everything can fail</li>
+								<li>Every minute <i>millions</i> of things break in the system</li>
+                <li>Incident is just the name we give failures we notice</li>
 								<li>Heck, even I'm actively pushing bugs</li>
 							</ul>
 						</aside>
@@ -283,10 +283,10 @@
 						<h3>Assumptions are the mother of all f*ckups</h3>
 						<aside class="notes">
 							<ul>
-								<li>The brain uses simple heuristics that are often misleading</li>
 								<li>Psychologically feel pressure to do something, it's hard sit idly by</li>
-								<li>More often then not it's better not to do anything then to shoot in the dark</li>
+								<li>The brain uses simple heuristics that are often misleading</li>
                 <li>People are biased; usual suspect bias</li>
+								<li>More often then not it's better not to do anything then to shoot in the dark</li>
 								<li>What's the first thing people do when something's misbehaving? they restart it</li>
 								<li>Always analyze data before doing anything</li>
 							</ul>
@@ -348,6 +348,7 @@
 						<aside class="notes">
 							<ul>
 								<li>Don't leave issues in the system</li>
+                <li>Follow up on post mortems</li>
 							</ul>
 						</aside>
 					</section>
