@@ -81,9 +81,9 @@
 						<h1>Incidents are also an opportunity</h1>
 						<aside class="notes">
 						<ul>
-							<li>Your systems are being tested in ways you never imagined</li>
-							<li>That data is pricesless</li>
-							<li>New operational paths open; e.g. you can set database to read only mode</li>
+							<li>Your system is in a condition that you probably didn't think about and is probably hard to simulate.</li>
+							<li>You want to learn about the system behaviour in this situation, the data is priceless</li>
+							<li>New operational paths open; if you already have downtime, you can test things on production</li>
 							<li>Seize the opportunity. The managers sometimes say:</li>
 						</ul>
 						</aside>
@@ -178,12 +178,13 @@
 						<h3>Systems exhibit different behaviour under stress</h3>
 						<ul>
 							<li>Different operation procedures</li>
-							<li>Some bugs/behaviours manifest in abnormal conditions</li>
-							<li>Faulty fallback syndrom</li>
+							<li>Some bugs/behaviours manifest only in abnormal conditions</li>
+							<li>Faulty fallback syndrome</li>
 						</ul>
 						<aside class="notes">
 							<ul>
 								<li>The systems behaves differently when things are broken</li>
+								<li>You want to have graceful degradation</li>
 								<li>The only way to prepare is to simulate disasters</li>
 								<li>I've seen many fallbacks that failed during incidents because to the faulty fallback syndrom. The problem is that fallbacks are often tested on normal conditions and rarely used in prodcution; But fallbacks are needed the most when the system is under load and broken and therefor fail. An example of this is master slave RDBMS failover without warmup</li>
 							</ul>
@@ -204,11 +205,10 @@
 		              </ul>
 		            </aside>
 		          </section>				
-
 					<section>
             			<h2>Don't forget the human factor</h2>
 			            <ul>
-			              <li>Standartize</li>
+			              <li>Standardize</li>
 			              <li>Consolidate</li>
 			              <li>Redundancy includes people</li>
 			              <li>Manage team fatigue and wear</li>
@@ -236,6 +236,7 @@
 							<ul>
 								<li>Every minute <i>millions</i> of things break in the system</li>
                 <li>Incident is just the name we give failures we notice</li>
+                				<li></li>
 								<li>Heck, even I'm actively pushing bugs</li>
 							</ul>
 						</aside>
@@ -262,7 +263,7 @@
 						<ul>
             				<li>Watch the clock and decision lines</li>
             				<li>Communicate and keep information flowing</li>
-            				<li>Maintaint incident log</li>
+            				<li>Maintain an incident log</li>
 							<li>Prepare the handoff</li>
 						</ul>
 						<div class="fragment">
@@ -285,7 +286,8 @@
 							<ul>
 								<li>Psychologically feel pressure to do something, it's hard sit idly by</li>
 								<li>The brain uses simple heuristics that are often misleading</li>
-                <li>People are biased; usual suspect bias</li>
+                				<li>People are biased; usual suspect bias</li>
+                				<li>You could be causing the issue to aggrevate, you could be causing another issue</li>
 								<li>More often then not it's better not to do anything then to shoot in the dark</li>
 								<li>What's the first thing people do when something's misbehaving? they restart it</li>
 								<li>Always analyze data before doing anything</li>
@@ -321,6 +323,7 @@
 						<h2>Post Mortem</h2>
 						<aside class="notes">
 							<ul>
+								<li>Pre-mortem</li>
 								<li>People expect post mortem to produce a root cause, but...</li>
 							</ul>
 						</aside>
@@ -347,8 +350,8 @@
 						<p>Techincal debt can be dangerous</p>
 						<aside class="notes">
 							<ul>
-								<li>Don't leave issues in the system</li>
-                <li>Follow up on post mortems</li>
+								<li>Don't leave issues in the system, they could to interact</li>
+                				<li>Follow up on post mortems</li>
 							</ul>
 						</aside>
 					</section>
@@ -365,7 +368,7 @@
 						</aside>
 					</section>
 					<section>
-						<h2>Even if Rambo is working for you</h2>
+						<h2>Even you've got Rambo Ops working for you</h2>
 						<h2>Reliability is a long term effort</h2>
 					</section>
 					<section>
@@ -380,7 +383,6 @@
 		<script src="js/reveal.min.js"></script>
 
 		<script>
-
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
@@ -407,6 +409,5 @@
 			});
 
 		</script>
-
 	</body>
 </html>
