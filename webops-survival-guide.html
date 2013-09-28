@@ -185,7 +185,7 @@
 							<ul>
 								<li>The systems behaves differently when things are broken</li>
 								<li>You want to have graceful degradation</li>
-								<li>The only way to prepare is to simulate disasters</li>
+								<li>We can only learn about behaviours through real-world incidents and simulation</li>
 								<li>I've seen many fallbacks that failed during incidents because to the faulty fallback syndrom. The problem is that fallbacks are often tested on normal conditions and rarely used in prodcution; But fallbacks are needed the most when the system is under load and broken and therefor fail. An example of this is master slave RDBMS failover without warmup</li>
 							</ul>
 						</aside>
@@ -201,7 +201,6 @@
 		            <aside class="notes">
 		              <ul>
                     <li>You have many processes, some automated some manual. Some for normal operation and some for emergencies</li>
-		                <li>And it's better if it's cheap too</li>
 		              </ul>
 		            </aside>
 		          </section>				
@@ -369,7 +368,8 @@
 					</section>
 					<section>
 						<h2>Even you've got Rambo Ops working for you</h2>
-						<h2>Reliability is a long term effort</h2>
+						<h2 class="fragment">Reliability is a long term effort</h2>
+            <h2 class="fragment">Incidents are an opportunity to learn</h2>
 					</section>
 					<section>
 						<h1>Peace and uptime to all</h1>
