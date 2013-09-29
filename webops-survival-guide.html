@@ -25,12 +25,29 @@
 			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
 		</script>
 
+		<style type="text/css">
+			.process-context {
+				position: absolute;
+				top: 30px;
+				left: 0;
+				width: 100%;
+				height: 70px;
+				background-position: 50% 0;
+				background-repeat: no-repeat;
+			}
+
+			.process-1 .process-context { background-image: url(assets/process-1.png); }
+			.process-2 .process-context { background-image: url(assets/process-2.png); }
+			.process-3 .process-context { background-image: url(assets/process-3.png); }
+		</style>
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
 	</head>
 
 	<body>
+		<div class="process-context">
+		</div>
 
 		<div class="reveal">
 
@@ -61,7 +78,7 @@
 						</aside>
 					</section>
 					<section>
-						<h1>All systems break eventually</h1>
+						<h2>All systems break eventually</h2>
 						<aside class="notes">
 							<ul>
 								<li>And when it does break, people tend to feel like this...</li>
@@ -69,16 +86,16 @@
 						</aside>
 					</section>
 					<section>
-						<img src="http://images3.wikia.nocookie.net/creepypasta/images/8/80/Panic-attack-symptoms.png"/>
+						<img src="assets/Panic-attack-symptoms.png"/>
 					</section>
 					<section>
-			            <img src="http://1.bp.blogspot.com/-iHFPBkqHabw/Taws0pU8TwI/AAAAAAAAEB8/I4ijuHMR33E/s400/excellent-mr-burns.gif"/>
+			            <img src="assets/excellent-mr-burns.gif"/>
 					</section>
 					<section>
-						<h1>Downtime is bad, but...</h1>
+						<h2>Downtime is bad, but...</h2>
 					</section>
 					<section>
-						<h1>Incidents are also an opportunity</h1>
+						<h2>Incidents are also an opportunity</h2>
 						<aside class="notes">
 						<ul>
 							<li>Your system is in a condition that you probably didn't think about and is probably hard to simulate.</li>
@@ -89,12 +106,12 @@
 						</aside>
 					</section>
 					<section>
-						<h1>Cut the B.S., We want uptime!</h1>
+						<h2>Cut the B.S., We want uptime!</h2>
 					</section>
 					<section>
-						<h1>Just call Rambo Ops when something breaks</h1>
+						<h2>Just call Rambo Ops when something breaks</h2>
             			<img src="assets/santang-rambo-tux.png"/>
-            			<h1 class="fragment">No</h1>
+            			<h2 style="position:relative; top:-4em;" class="fragment"><img src="assets/fail.png"/></h2>
             			<aside class="notes">
             				<ul>
             					<li>Rambo needs tools in place</li>
@@ -105,24 +122,15 @@
             			</aside>
 					</section>
 					<section>
-						<h1>Reliability is a long term effort</h>
+						<h2>Reliability is a long term effort</h2>
+						<div class="fragment">
+							<br />
+							<img src="assets/process.png"/>
+						</div>
 						<aside class="notes">
 							<ul>
-								<li>Reliability is a (hidden) cost that needs to be actively managed</li>
-                <li>Real world experience is critical</li>
-								<li>Actual data is hard to come by when dealing with one-of-a-kind system and rare events</li>
-							</ul>
-              <p>As part of this long term effort boils we want to</p>
-						</aside>
-					</section>
-					<section>
-						<ul>
-							<li>Prepare</li>
-							<li>Handle disasters</li>
-							<li>Learn and improve</li>
-						</ul>
-						<aside class="notes">
-							<ul>
+							<li>Reliability is a (hidden) cost that needs to be actively managed</li>
+               				 <li>Real world experience is critical</li>
 								<li>Prepare when things are ok</li>
 								<li>Handle disasters as they occure</li>
 								<li>Learn from those disasters and improve</li>
@@ -131,7 +139,7 @@
 						</aside>
 					</section>
 				</section>
-				<section>
+				<section data-state="process-1">
 					<section>
 						<h2>Be realistic</h2>
 						<ul>
@@ -225,30 +233,23 @@
 					</section>
 					<section>
 						<h2>It ain't paranoya when they are really out to get you</h2>
-						<h3 class="fragment">Everything fails</h3>
-            			<h3 class="fragment">You can't even trust yourself</h3>
-			            <ul class="fragment">
-			              <li>Tests</li>
-			              <li>Runtime validation</li>
-			              <li>Change management</li>
-			            </ul>
 						<aside class="notes">
 							<ul>
 								<li>Every minute <i>millions</i> of things break in the system</li>
-                <li>Incident is just the name we give failures we notice</li>
-                				<li></li>
-								<li>Heck, even I'm actively pushing bugs</li>
+                				<li>Incident is just the name we give failures we notice</li>
+                				<li>Everything fails</li>
+								<li>HYou can't even trust yourself - eck, even I'm actively pushing bugs</li>
 							</ul>
 						</aside>
 					</section>
       			</section>
-				<section>
+				<section data-state="process-2">
 					<section>
-						<h1>Meanwhile, in real life</h1>
+						<h2>Meanwhile, in real life</h2>
 					</section>
 					<section>
-						<h1>3AM, Nagios critical</h1>
-						<img src="assets/drunk_fark_sysadmin.jpg"/>
+						<h2>3AM, Nagios critical</h2>
+						<img src="assets/drunkfarksysadmin.jpg"/>
 						<aside class="notes">
 							<ul>
 								<li>things always happen at 3am</li>
@@ -256,10 +257,10 @@
 						</aside>
 					</section>
 					<section>
-						<h1>Don't panic</h1>
+						<h2>Don't panic</h2>
 					</section>
 					<section>
-						<h1>Assign an incident mananger</h1>
+						<h2>Assign an incident mananger</h2>
 						<ul>
             				<li>Take the pressure off</li>
             				<li>Watch the clock and decision lines</li>
@@ -277,8 +278,8 @@
 						</aside>
 					</section>
 					<section>
-						<h1>Never act without evidence</h1>
-						<h3>Assumptions are the mother of all f*ckups</h3>
+						<h2>Never act without evidence</h2>
+						<p>Assumptions are the mother of all f*ckups</p>
 						<aside class="notes">
 							<ul>
 								<li>Psychologically feel pressure to do something, it's hard sit idly by</li>
@@ -292,14 +293,14 @@
 						</aside>
 					</section>
 					<section>
-						<h1>Collect data</h1>
+						<h2>Collect data</h2>
 						<p>Data needed for debugging, simulating and post mortem</p>
 					</section>
 					<section>
-						<h1>Do one thing at a time</h1>
+						<h2>Do one thing at a time</h2>
 					</section>
 			          <section>
-			            <h1>Communicate!</h1>
+			            <h2>Communicate!</h2>
 			            <ul>
 			              <li>Chat services</li>
 			              <li>Log the chat</li>
@@ -312,9 +313,9 @@
 			            </aside>
 			          </section>
 				</section>
-				<section>
+				<section data-state="process-3">
 					<section>
-						<h1>Dude, what just happened?</h1>	
+						<h2>Dude, what just happened?</h2>	
 					</section>
 					<section>
 						<h2>Post Mortem</h2>
@@ -371,19 +372,16 @@
 						</aside>
 					</section>
 					<section>
-						<h2>Even you've got Rambo Ops working for you</h2>
-						<h2>Reliability is a long term effort</h2>
-					</section>
-          <section>
-            <h2>Incidents are an opportunity to learn</h2>
-						<aside class="notes">
+						<img src="assets/santang-rambo-tux.png"/>
+				<aside class="notes">
 							<ul>
+				<li>So even you actually have the best OPS guy in the world working for you... remember</li>				
                 <li>When a system hasn't never failed yet, we don't have any information about potential damage and weak spots; What worse, people build misplaced trust and potential loss accomulates</li>
                 <li>If a system hasn't failed for a very long time, odds are nobody knows what to do when it will fail</li>
                 <li>Even you simulate, you can't be sure simulation is relevant because you have no real data to compare to</li>
 							</ul>
 						</aside>
-          </section>
+					</section>
 					<section>
 						<h1>Peace and uptime to all</h1>
 					</section>
