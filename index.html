@@ -14,16 +14,28 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="reveal.js/css/reveal.min.css">
-		<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/css/reveal.min.css">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/hakimel/reveal.js/3.3.0/css/theme/league.css" id="theme">
 
 		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+		<link rel="stylesheet" href="https://cdn.rawgit.com/hakimel/reveal.js/3.3.0/lib/css/zenburn.css">
 
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-		<script>
-			document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
+	    <!-- Printing and PDF exports -->
+	    <script>
+	        var link = document.createElement( 'link' );
+	        link.rel = 'stylesheet';
+	        link.type = 'text/css';
+	        link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.rawgit.com/hakimel/reveal.js/3.3.0/css/print/pdf.css' : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/css/print/paper.css';
+	        document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+	        var m = window.location.search.match(/theme=([^&]+)/);
+	        if( m ) {
+	            theme = m[1];
+	            var link = document.getElementById('theme');
+	            link.href = 'https://cdn.rawgit.com/hakimel/reveal.js/3.3.0/css/theme/' + theme + '.css';
+	        }
+	    </script>
 
 		<style type="text/css">
 			.process-context {
@@ -388,35 +400,37 @@
 
 		</div>
 
-		<script src="reveal.js/lib/js/head.min.js"></script>
-		<script src="reveal.js/js/reveal.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/lib/js/head.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0/js/reveal.min.js"></script>
 
-		<script>
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+        <script>
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-					// { src: 'reveal.js/plugin/leap/leap.js', async: true }
-					// { src: 'reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
-					// { src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
+                transition: Reveal.getQueryHash().transition || 'slide', // none/fade/slide/convex/concave/zoom
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
 
-		</script>
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'https://cdn.rawgit.com/hakimel/reveal.js/3.3.0/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'https://cdn.rawgit.com/hakimel/reveal.js/3.3.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'https://cdn.rawgit.com/hakimel/reveal.js/3.3.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'https://cdn.rawgit.com/hakimel/reveal.js/3.3.0/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'https://cdn.rawgit.com/hakimel/reveal.js/3.3.0/plugin/zoom-js/zoom.js', async: true },
+                    { src: 'https://cdn.rawgit.com/hakimel/reveal.js/3.3.0/plugin/notes/notes.js', async: true },
+                    { src: 'https://cdn.rawgit.com/hakimel/reveal.js/3.3.0/plugin/math/math.js', async: true},
+                    { src: 'js/reveal-svg-fragment.js', condition: function() { return !!document.querySelector( '[data-svg-fragment]' ); }}
+                ]
+            });
+
+        </script>
 	</body>
 </html>
